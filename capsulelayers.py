@@ -146,7 +146,7 @@ class CapsuleLayer(layers.Layer):
         assert self.num_routing > 0, 'The num_routing should be > 0.'
         for i in range(self.num_routing):
             # c.shape=[batch_size, num_capsule, input_num_capsule]
-            c = tf.nn.softmax(b, dim=1)
+            c = tf.nn.softmax(b, axis=1)
 
             # Son iterasyonda, gradyanı geriye yaymak için ,`inputs_hat` kullanarak `outputs` hesaplanır.
             if i == self.num_routing - 1:
